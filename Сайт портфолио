@@ -11,7 +11,7 @@
     </div>
     <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 96px; display: flex">
       <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 72px; display: inline-flex">
-        <img style="width: 288px; height: 312px; border-radius: 20px" src="avatar.png" />
+        <img style="width: 288px; height: 312px; border-radius: 20px" <img src="images/avatar.jpg" />
         <div style="width: 696px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
           <div style="width: 696px; color: black; font-size: 48px; font-family: Inter; font-weight: 600; word-wrap: break-word">Привет! Я Алиса Поткина</div>
           <div style="width: 696px; color: black; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Графический дизайнер с опытом работы более 3-х лет</div>
