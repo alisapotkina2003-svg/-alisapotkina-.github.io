@@ -153,3 +153,40 @@ h2 {
     }
 }
 
+/* Плавная прокрутка для всего сайта */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Сама кнопка */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: black;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    z-index: 99;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавность для эффекта наведения */
+}
+
+/* Эффект при наведении курсора */
+.back-to-top:hover {
+    background-color: #333333; /* Чуть светлее при наведении */
+    transform: translateY(-3px); /* Кнопка слегка "подпрыгивает" вверх */
+}
+
+/* Прячем кнопку на мобилках, если она перекрывает текст (по желанию) */
+max-width: 768px {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
