@@ -11,10 +11,10 @@
     </div>
     <div style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 96px; display: flex">
       <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 72px; display: inline-flex">
-        <img style="width: 288px; height: 312px; border-radius: 20px" <img src="images/avatar.jpg" />
+        <img style="width: 288px; height: 312px; border-radius: 20px" src="avatar.png />
         <div style="width: 696px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
           <div style="width: 696px; color: black; font-size: 48px; font-family: Inter; font-weight: 600; word-wrap: break-word">Привет! Я Алиса Поткина</div>
-          <div style="width: 696px; color: black; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Графический дизайнер с опытом работы более 3-х лет</div>
+          <div style="width: 696px; color: black; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Графический дизайнер           с опытом работы более 3-х лет</div>
           <div style="align-self: stretch; color: black; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS-материалов и оформления ритейл-пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.</div>
         </div>
       </div>
@@ -39,5 +39,10 @@
             <div style="width: 480px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
               <div style="align-self: stretch; color: black; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">Маркетинговый дизайн</div>
               <div style="width: 456px; color: black; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital-контента для таргета, разработка наружной рекламы и быстрый монтаж видеовизиток.</div>
-           
-          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
