@@ -1,67 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Алиса Поткина - Портфолио</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Подключаем отдельный файл со стилями дизайна -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алиса Поткина — Портфолио</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <!-- Навигация -->
-    <div class="nav-links">
-        <a href="#">CV</a>
-        <a href="#">Behance</a>
-        <a href="#">Telegram</a>
-    </div>
+  <!-- Закрепленное меню -->
+  <header class="header">
+    <button class="nav-link">Кейсы</button>
+    <button class="nav-link">Резюме</button>
+    <button class="nav-link">Telegram</button>
+    <button class="nav-link">Behance</button>
+  </header>
 
-    <!-- Главный экран -->
-    <div class="hero-section">
-        <!-- Убедитесь, что файл avatar.png лежит в корне репозитория -->
-        <img class="hero-image" src="avatar.png" alt="Алиса Поткина" />
-        <div class="hero-content">
-            <h1>Привет! Я Алиса Поткина</h1>
-            <p class="subtitle">Графический дизайнер с опытом работы более 3-х лет</p>
-            <p class="description">Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS-материалов и оформления ритейл-пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.</p>
+  <main class="container">
+    
+    <!-- Кнопка "Назад" -->
+    <button class="back-button" onclick="history.back()">Назад</button>
+
+    <!-- Блок: Обо мне -->
+    <section class="hero-section">
+      <div class="hero-text-info">
+        <div class="title-wrapper">
+          <div class="title-decoration hero-decoration"></div>
+          <h1 class="main-title">Привет! Я Алиса Поткина</h1>
         </div>
-    </div>
+        <h3 class="subtitle">Графический дизайнер с опытом работы более 3‑х лет</h3>
+        <p class="paragraph">
+          Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS‑материалов и оформления ритейл‑пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.
+        </p>
+      </div>
+      <img class="profile-image" src="https://placehold.co/290x335" alt="Алиса Поткина" />
+    </section>
 
-    <!-- Блок со сферами -->
-    <div class="skills-section">
-        <h2>Мои сферы:</h2>
+    <!-- Блок: Мои сферы -->
+    <section class="spheres-section">
+      <div class="title-wrapper align-left">
+        <div class="title-decoration spheres-decoration"></div>
+        <h2 class="section-title">Мои сферы</h2>
+      </div>
+      
+      <div class="spheres-grid">
+        <div class="sphere-item">
+          <h4 class="sphere-title">Креативный дизайн & Брендинг</h4>
+          <p class="paragraph">
+            Разработка визуальных концепций, гайдлайнов, адаптация Key Visual под разные носители и оформление сложных b2b‑презентаций. Есть опыт работы как в брендинговых агентствах, так и in‑house.
+          </p>
+        </div>
         
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3 class="skill-title">Креативный дизайн & Брендинг</h3>
-                <p class="description">Разработка визуальных концепций, гайдлайнов, адаптация Key Visual под разные носители и оформление сложных b2b-презентаций. Есть опыт работы как в брендинговых агентствах, так и in-house.</p>
-            </div>
-            
-            <div class="skill-card">
-                <h3 class="skill-title">Мерч & Полиграфия</h3>
-                <p class="description">Полный цикл создания продукции — от концепции дропа и отрисовки уникальных иллюстраций до создания векторных мокапов и уверенной препресс-подготовки для типографий.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3 class="skill-title">AI-интеграция в коммерцию</h3>
-                <p class="description">Профессионально внедряю генеративные нейросети (Midjourney, Stable Diffusion и др.) в пайплайн производства контента. Создаю сложные промпты для точного рендера (включая ювелирные изделия с полным сохранением дизайна) и генерирую высококачественные рекламные имиджи, ускоряя продакшен.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3 class="skill-title">Маркетинговый дизайн</h3>
-                <p class="description">Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital-контента для таргета, разработка наружной рекламы и быстрый монтаж видеовизиток.</p>
-            </div>
+        <div class="sphere-item">
+          <h4 class="sphere-title">Мерч & Полиграфия</h4>
+          <p class="paragraph">
+            Полный цикл создания продукции — от концепции дропа и отрисовки уникальных иллюстраций до создания векторных мокапов и уверенной препресс‑подготовки для типографий.
+          </p>
         </div>
-    </div>
-</div>
-<a href="#" class="back-to-top">↑ Наверх</a>
-</body>
+        
+        <div class="sphere-item">
+          <h4 class="sphere-title">AI‑интеграция в коммерцию</h4>
+          <p class="paragraph">
+            Профессионально внедряю генеративные нейросети (Midjourney, Stable Diffusion и др.) в пайплайн производства контента. Создаю сложные промпты для точного рендера (включая ювелирные изделия с полным сохранением дизайна) и генерирую высококачественные рекламные имиджи, ускоряя продакшен.
+          </p>
+        </div>
+        
+        <div class="sphere-item">
+          <h4 class="sphere-title">Маркетинговый дизайн</h4>
+          <p class="paragraph">
+            Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital‑контента для таргета, разработка наружной рекламы и быстрый монтаж видеовизиток.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок: Проекты -->
+    <section class="projects-section">
+      <div class="title-wrapper align-left">
+        <div class="title-decoration projects-decoration"></div>
+        <h2 class="section-title">Проекты</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 9 плашек для портфолио -->
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+        <div class="project-card-placeholder"></div>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
 
