@@ -8,17 +8,14 @@
 /* Твой шрифт Cygre (Обычный для заголовков) */
 @font-face {
   font-family: 'Cygre';
-  src: url('fonts/cygre-regular.ttf') format('truetype'), /* если у тебя .ttf */
-       url('fonts/Cygre-Regular.woff2') format('woff2');  /* если у тебя .woff2 */
-  font-weight: 400;
+  src: url('fonts/Cygre-Regular.ttf') format('truetype'), /* если у тебя .ttf */
   font-style: normal;
 }
 
 /* Твой шрифт Cygre (Medium для подзаголовков) */
 @font-face {
   font-family: 'Cygre Medium';
-  src: url('fonts/cygre-medium.ttf') format('truetype'),
-       url('fonts/Cygre-Medium.woff2') format('woff2');
+  src: url('fonts/Cygre-Medium.ttf') format('truetype'),
   font-weight: 500;
   font-style: normal;
 }
