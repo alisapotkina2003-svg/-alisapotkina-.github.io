@@ -1,101 +1,249 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Алиса Поткина — Портфолио</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* =========================================
+   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ
+========================================= */
 
-  <!-- Закрепленное меню -->
-  <header class="header">
-    <button class="nav-link">Кейсы</button>
-    <button class="nav-link">Резюме</button>
-    <button class="nav-link">Telegram</button>
-    <button class="nav-link">Behance</button>
-  </header>
+/* Бесплатный Inter для основного текста */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 
-  <main class="container">
-    
-    <!-- Кнопка "Назад" -->
-    <button class="back-button" onclick="history.back()">Назад</button>
+/* Твой шрифт Cygre (Обычный для заголовков) */
+@font-face {
+  font-family: 'Cygre';
+  src: url('fonts/cygre-regular.ttf') format('truetype'), /* если у тебя .ttf */
+       url('fonts/Cygre-Regular.woff2') format('woff2');  /* если у тебя .woff2 */
+  font-weight: 400;
+  font-style: normal;
+}
 
-    <!-- Блок: Обо мне -->
-    <section class="hero-section">
-      <div class="hero-text-info">
-        <div class="title-wrapper">
-          <div class="title-decoration hero-decoration"></div>
-          <h1 class="main-title">Привет! Я Алиса Поткина</h1>
-        </div>
-        <h3 class="subtitle">Графический дизайнер с опытом работы более 3‑х лет</h3>
-        <p class="paragraph">
-          Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS‑материалов и оформления ритейл‑пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.
-        </p>
-      </div>
-      <img class="profile-image" src="https://placehold.co/290x335" alt="Алиса Поткина" />
-    </section>
+/* Твой шрифт Cygre (Medium для подзаголовков) */
+@font-face {
+  font-family: 'Cygre Medium';
+  src: url('fonts/cygre-medium.ttf') format('truetype'),
+       url('fonts/Cygre-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
 
-    <!-- Блок: Мои сферы -->
-    <section class="spheres-section">
-      <div class="title-wrapper align-left">
-        <div class="title-decoration spheres-decoration"></div>
-        <h2 class="section-title">Мои сферы</h2>
-      </div>
-      
-      <div class="spheres-grid">
-        <div class="sphere-item">
-          <h4 class="sphere-title">Креативный дизайн & Брендинг</h4>
-          <p class="paragraph">
-            Разработка визуальных концепций, гайдлайнов, адаптация Key Visual под разные носители и оформление сложных b2b‑презентаций. Есть опыт работы как в брендинговых агентствах, так и in‑house.
-          </p>
-        </div>
-        
-        <div class="sphere-item">
-          <h4 class="sphere-title">Мерч & Полиграфия</h4>
-          <p class="paragraph">
-            Полный цикл создания продукции — от концепции дропа и отрисовки уникальных иллюстраций до создания векторных мокапов и уверенной препресс‑подготовки для типографий.
-          </p>
-        </div>
-        
-        <div class="sphere-item">
-          <h4 class="sphere-title">AI‑интеграция в коммерцию</h4>
-          <p class="paragraph">
-            Профессионально внедряю генеративные нейросети (Midjourney, Stable Diffusion и др.) в пайплайн производства контента. Создаю сложные промпты для точного рендера (включая ювелирные изделия с полным сохранением дизайна) и генерирую высококачественные рекламные имиджи, ускоряя продакшен.
-          </p>
-        </div>
-        
-        <div class="sphere-item">
-          <h4 class="sphere-title">Маркетинговый дизайн</h4>
-          <p class="paragraph">
-            Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital‑контента для таргета, разработка наружной рекламы и быстрый монтаж видеовизиток.
-          </p>
-        </div>
-      </div>
-    </section>
+/* =========================================
+   2. БАЗОВЫЕ НАСТРОЙКИ
+========================================= */
+* {
+  box-sizing: border-box;
+}
 
-    <!-- Блок: Проекты -->
-    <section class="projects-section">
-      <div class="title-wrapper align-left">
-        <div class="title-decoration projects-decoration"></div>
-        <h2 class="section-title">Проекты</h2>
-      </div>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+}
 
-      <div class="projects-grid">
-        <!-- 9 плашек для портфолио -->
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-      </div>
-    </section>
+/* =========================================
+   3. ШАПКА (МЕНЮ)
+========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  z-index: 100;
+  border-bottom: 1px solid #f0f0f0;
+}
 
-  </main>
-</body>
-</html>
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+  padding: 0;
+}
 
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+/* =========================================
+   4. ОСНОВНОЙ КОНТЕЙНЕР И КНОПКА "НАЗАД"
+========================================= */
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 60px 20px 120px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.back-button {
+  background: #FFFCBE; /* <-- ЖЕЛТЫЙ ЦВЕТ ИЗ ТВОЕГО КОДА */
+  border: none;
+  padding: 16px 32px;
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  text-transform: uppercase;
+  align-self: flex-start;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* =========================================
+   5. ЗАГОЛОВКИ С ЖЕЛТЫМИ ПОДЛОЖКАМИ
+========================================= */
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.title-wrapper.align-left {
+  align-self: flex-start;
+}
+
+/* Это тот самый желтый прямоугольник, который в фигме был сзади текста */
+.title-decoration {
+  position: absolute;
+  bottom: 4px;
+  left: -10px;
+  right: -10px;
+  height: 56px;
+  background: #FFFCBE; /* <-- ЖЕЛТЫЙ ЦВЕТ ИЗ ТВОЕГО КОДА */
+  z-index: 0;
+}
+
+.hero-decoration { width: 100%; }
+.spheres-decoration { width: 322px; right: auto; }
+.projects-decoration { width: 256px; right: auto; }
+
+/* Главные заголовки (Привет! / Мои сферы / Проекты) */
+.main-title, .section-title {
+  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  font-size: 48px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1; /* Чтобы текст был поверх желтой плашки */
+  margin: 0;
+}
+
+/* =========================================
+   6. ТЕКСТЫ И ПОДЗАГОЛОВКИ
+========================================= */
+.subtitle {
+  font-family: "Cygre Medium", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sphere-title {
+  font-family: "Cygre Medium", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.paragraph {
+  font-family: "Inter", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
+}
+
+/* =========================================
+   7. СЕТКИ И РАСПОЛОЖЕНИЕ БЛОКОВ
+========================================= */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  -items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-text-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-text-info .paragraph {
+  max-width: 575px;
+}
+
+.profile-image {
+  width: 290px;
+  height: 335px;
+  object-fit: cover;
+}
+
+.spheres-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.spheres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+.sphere-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sphere-item .paragraph {
+  max-width: 456px;
+}
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card-placeholder {
+  background: #D9D9D9;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+/* =========================================
+   8. АДАПТИВ (Для телефонов и планшетов)
+========================================= */
+max-width: 768px {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .spheres-grid { grid-template-columns: 1fr; }
+  .header { flex-wrap: wrap; gap: 15px; }
+}
+
+max-width: 480px {
+  .projects-grid { grid-template-columns: 1fr; }
+  .main-title, .section-title { font-size: 32px; }
+} align
