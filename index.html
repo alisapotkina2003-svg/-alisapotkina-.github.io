@@ -90,11 +90,23 @@
         <div class="project-card-placeholder"></div>
       </div>
     </section>
-<button class="back-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Наверх</button>
-  </main>
-</body>
-</html>
-  </main>
-</body>
-</html>
+<!-- Наша кнопка. Я дала ей уникальный id="scrollTopBtn", чтобы другие стили её не трогали -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Наверх</button>
 
+  </main>
+
+  <!-- Скрипт, который показывает кнопку при скролле -->
+  <script>
+    const btn = document.getElementById("scrollTopBtn");
+    
+    // Следим за скроллом страницы
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // Если пролистали вниз больше 300 пикселей
+        btn.classList.add("show"); // Показываем кнопку
+      } else {
+        btn.classList.remove("show"); // Прячем кнопку
+      }
+    });
+  </script>
+</body>
+</html>
