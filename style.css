@@ -78,20 +78,29 @@ body {
   flex-direction: column;
   gap: 140px;
 }
-
 .back-button {
-  background: #FFFCBE; /* <-- ЖЕЛТЫЙ ЦВЕТ ИЗ ТВОЕГО КОДА */
-  border: none;
-  padding: 16px 32px;
-  cursor: pointer;
+  /* 1. Внешний вид (цвет, шрифт, отступы) */
+  background: #FFFCBE; 
   color: black;
+  font-family: "Cygre", sans-serif;
   font-size: 20px;
-  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
   text-transform: uppercase;
-  align-self: flex-start;
+  padding: 16px 32px;
+  border: none;
+  cursor: pointer;
   transition: transform 0.2s, opacity 0.2s;
+  
+  /* 2. Закрепление в углу экрана */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  
+  /* Легкая тень, чтобы кнопка не сливалась с фоном при скролле */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
+/* Анимация при наведении */
 .back-button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
@@ -244,30 +253,3 @@ max-width: 480px {
   .projects-grid { grid-template-columns: 1fr; }
   .main-title, .section-title { font-size: 32px; }
 } align
-.back-button {
-  /* 1. Внешний вид (цвет, шрифт, отступы) */
-  background: #FFFCBE; 
-  color: black;
-  font-family: "Cygre", sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 16px 32px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-  
-  /* 2. Закрепление в углу экрана */
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 999;
-  
-  /* Легкая тень, чтобы кнопка не сливалась с фоном при скролле */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-}
-
-/* Анимация при наведении */
-.back-button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
