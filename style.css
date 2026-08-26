@@ -77,17 +77,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 140px;
-/* =========================================
-   КНОПКА НАВЕРХ (Плавающая)
-========================================= */
 #scrollTopBtn {
-  /* Жестко фиксируем справа внизу */
-  position: fixed !important; 
+  position: fixed !important;
   bottom: 40px !important;
   right: 40px !important;
   z-index: 999;
   
-  /* Дизайн (твои цвета и шрифты) */
   background: #FFFCBE;
   color: black;
   font-family: "Cygre", sans-serif;
@@ -98,24 +93,13 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   
-  /* Прячем её изначально, чтобы она появлялась только при скролле */
+  /* Эти две строчки прячут её, чтобы скрипт мог показать её при скролле */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px); 
-  transition: all 0.3s ease;
 }
-
-/* Этот класс добавляется скриптом, когда мы скроллим вниз */
 #scrollTopBtn.show {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-}
-
-/* Плавная анимация при наведении мышки */
-#scrollTopBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 /* =========================================
    5. ЗАГОЛОВКИ С ЖЕЛТЫМИ ПОДЛОЖКАМИ
