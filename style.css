@@ -238,13 +238,73 @@ body {
 /* =========================================
    8. АДАПТИВ (Для телефонов и планшетов)
 ========================================= */
+
 max-width: 768px {
+  /* --- Сетки --- */
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .spheres-grid { grid-template-columns: 1fr; }
-  .header { flex-wrap: wrap; gap: 15px; }
+  
+  /* --- Шапка (меню) --- */
+  .header { 
+    flex-wrap: wrap; /* Разрешаем пунктам падать на вторую строку */
+    gap: 15px; 
+    padding: 15px 10px;
+  }
+  .nav-link {
+    font-size: 14px; /* Делаем меню мельче */
+  }
+
+  /* --- Секция "Обо мне" --- */
+  .hero-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* ХАК ДЛЯ ФОТКИ: Поднимаем её наверх (над текстом) */
+  .profile-image {
+    order: -1; /* Заставляет картинку встать ПЕРЕД текстом */
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    align-self: center; /* Центрируем фотку */
+    margin-bottom: 20px;
+  }
 }
 
 max-width: 480px {
+  /* --- Главный контейнер --- */
+  .container {
+    padding: 30px 15px 80px 15px; /* Уменьшаем боковые отступы на телефоне */
+    gap: 80px; /* Уменьшаем дыры между блоками */
+  }
+
+  /* --- Сетки --- */
   .projects-grid { grid-template-columns: 1fr; }
-  .main-title, .section-title { font-size: 32px; }
-} align
+  
+  /* --- Заголовки (чиним гигантский текст) --- */
+  .main-title, .section-title { 
+    font-size: 32px; /* Было 48px, стало 32px */
+    line-height: 1.1;
+    word-break: break-word; /* Не дает длинным словам ломать экран */
+  }
+  
+  /* Желтая подложка */
+  .title-decoration {
+    height: 36px; /* Делаем подложку тоньше под новый размер текста */
+    bottom: 2px;
+  }
+  
+  .subtitle { 
+    font-size: 22px; 
+  }
+  
+  .paragraph {
+    font-size: 15px;
+  }
+  
+  /* --- Кнопка "Назад" --- */
+  .back-button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
