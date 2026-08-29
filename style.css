@@ -1,310 +1,203 @@
-/* =========================================
-   1. ПОДКЛЮЧЕНИЕ ШРИФТОВ
-========================================= */
-
-/* Бесплатный Inter для основного текста */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
-
-/* Твой шрифт Cygre (Обычный для заголовков) */
-@font-face {
-  font-family: 'Cygre';
-  src: url('fonts/Cygre-Regular.ttf') format('truetype'), /* если у тебя .ttf */
-  font-style: normal;
-}
-
-/* Твой шрифт Cygre (Medium для подзаголовков) */
-@font-face {
-  font-family: 'Cygre Medium';
-  src: url('fonts/Cygre-Medium.ttf') format('truetype'),
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* =========================================
-   2. БАЗОВЫЕ НАСТРОЙКИ
-========================================= */
+/* Базовые настройки */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  color: black;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fcfcfc;
+  padding-top: 70px; /* Отступ под фиксированное меню */
 }
 
-/* =========================================
-   3. ШАПКА (МЕНЮ)
-========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+/* Закрепленное меню */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: white;
-  padding: 30px 20px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  z-index: 100;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+.nav-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-link {
   background: none;
   border: none;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
   cursor: pointer;
-  color: black;
-  font-size: 20px;
-  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
-  text-transform: uppercase;
-  transition: opacity 0.2s;
-  padding: 0;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav-link:hover {
-  opacity: 0.6;
+  color: #007bff;
 }
 
-/* =========================================
-   4. ОСНОВНОЙ КОНТЕЙНЕР И КНОПКА "НАЗАД"
-========================================= */
-.container {
-  max-width: 1130px;
-  margin: 0 auto;
-  padding: 60px 20px 120px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 140px;
-#scrollTopBtn {
-  position: fixed !important;
-  bottom: 40px !important;
-  right: 40px !important;
-  z-index: 999;
-  
-  background: #FFFCBE;
-  color: black;
-  font-family: "Cygre", sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 16px 32px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  
-  /* Эти две строчки прячут её, чтобы скрипт мог показать её при скролле */
-  opacity: 0;
-  visibility: hidden;
-}
-#scrollTopBtn.show {
-  opacity: 1;
-  visibility: visible;
-}
-/* =========================================
-   5. ЗАГОЛОВКИ С ЖЕЛТЫМИ ПОДЛОЖКАМИ
-========================================= */
-.title-wrapper {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
-.title-wrapper.align-left {
-  align-self: flex-start;
-}
-
-/* Это тот самый желтый прямоугольник, который в фигме был сзади текста */
-.title-decoration {
-  position: absolute;
-  bottom: 4px;
-  left: -10px;
-  right: -10px;
-  height: 56px;
-  background: #FFFCBE; /* <-- ЖЕЛТЫЙ ЦВЕТ ИЗ ТВОЕГО КОДА */
-  z-index: 0;
-}
-
-.hero-decoration { width: 100%; }
-.spheres-decoration { width: 322px; right: auto; }
-.projects-decoration { width: 256px; right: auto; }
-
-/* Главные заголовки (Привет! / Мои сферы / Проекты) */
-.main-title, .section-title {
-  font-family: "Cygre", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
-  font-size: 48px;
-  font-weight: 400;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1; /* Чтобы текст был поверх желтой плашки */
-  margin: 0;
-}
-
-/* =========================================
-   6. ТЕКСТЫ И ПОДЗАГОЛОВКИ
-========================================= */
-.subtitle {
-  font-family: "Cygre Medium", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin: 0;
-}
-
-.sphere-title {
-  font-family: "Cygre Medium", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
-  font-size: 24px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.paragraph {
-  font-family: "Inter", sans-serif; /* <-- ШРИФТ ИЗ ТВОЕГО КОДА */
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: justify;
-  margin: 0;
-}
-
-/* =========================================
-   7. СЕТКИ И РАСПОЛОЖЕНИЕ БЛОКОВ
-========================================= */
+/* Блок Обо мне (Hero) */
 .hero-section {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  -items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
+  gap: 40px;
+  padding: 80px 0 60px;
 }
 
 .hero-text-info {
   flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  max-width: 600px;
 }
 
-.hero-text-info .paragraph {
-  max-width: 575px;
+.main-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .profile-image {
-  width: 290px;
-  height: 335px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 24px;
   object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.spheres-section {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.spheres-grid {
+/* Сетки (Гриды) для Сфер и Кейсов */
+.spheres-grid, .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Карточки Сфер - автоматически от 1 до 2-3 колонок */
+.spheres-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .sphere-item {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
-.sphere-item .paragraph {
-  max-width: 456px;
+.sphere-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
-.projects-section {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
+/* Карточки Проектов - автоматически от 1 до 3 колонок */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .project-card-placeholder {
-  background: #D9D9D9;
-  aspect-ratio: 1 / 1;
+  background: #e0e0e0;
   width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  transition: transform 0.3s;
 }
 
-/* =========================================
-   8. АДАПТИВ (Для телефонов и планшетов)
-========================================= */
+.project-card-placeholder:hover {
+  transform: translateY(-5px);
+}
 
-max-width: 768px {
-  /* --- Сетки --- */
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .spheres-grid { grid-template-columns: 1fr; }
-  
-  /* --- Шапка (меню) --- */
-  .header { 
-    flex-wrap: wrap; /* Разрешаем пунктам падать на вторую строку */
-    gap: 15px; 
-    padding: 15px 10px;
-  }
-  .nav-link {
-    font-size: 14px; /* Делаем меню мельче */
-  }
+/* Заголовки секций */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-  /* --- Секция "Обо мне" --- */
+/* Кнопка наверх */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- АДАПТИВНОСТЬ (Мобильные устройства) --- */
+@media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: column-reverse; /* Картинка сверху, текст снизу */
+    text-align: center;
+    padding: 40px 0;
+    gap: 30px;
   }
-  
-  /* ХАК ДЛЯ ФОТКИ: Поднимаем её наверх (над текстом) */
+
+  .hero-text-info {
+    max-width: 100%;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
   .profile-image {
-    order: -1; /* Заставляет картинку встать ПЕРЕД текстом */
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    align-self: center; /* Центрируем фотку */
-    margin-bottom: 20px;
-  }
-}
-
-max-width: 480px {
-  /* --- Главный контейнер --- */
-  .container {
-    padding: 30px 15px 80px 15px; /* Уменьшаем боковые отступы на телефоне */
-    gap: 80px; /* Уменьшаем дыры между блоками */
+    max-width: 300px;
   }
 
-  /* --- Сетки --- */
-  .projects-grid { grid-template-columns: 1fr; }
-  
-  /* --- Заголовки (чиним гигантский текст) --- */
-  .main-title, .section-title { 
-    font-size: 32px; /* Было 48px, стало 32px */
-    line-height: 1.1;
-    word-break: break-word; /* Не дает длинным словам ломать экран */
+  .title-wrapper.align-left {
+    text-align: center; /* Центрируем заголовки секций на мобилке */
+  }
+
+  .nav-container {
+    gap: 12px;
   }
   
-  /* Желтая подложка */
-  .title-decoration {
-    height: 36px; /* Делаем подложку тоньше под новый размер текста */
-    bottom: 2px;
-  }
-  
-  .subtitle { 
-    font-size: 22px; 
-  }
-  
-  .paragraph {
-    font-size: 15px;
-  }
-  
-  /* --- Кнопка "Назад" --- */
-  .back-button {
-    font-size: 16px;
-    padding: 12px 24px;
+  .nav-link {
+    font-size: 14px;
   }
 }
