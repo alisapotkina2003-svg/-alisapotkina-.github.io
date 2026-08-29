@@ -1,102 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Алиса Поткина — Портфолио</title>
-  <!-- Чистый тег для фавиконки (убедитесь, что файл favicon.png лежит в той же папке) -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Алиса Поткина</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Закрепленное меню -->
-  <header class="header">
-    <nav class="nav-container">
-      <button class="nav-link">Кейсы</button>
-      <button class="nav-link">Резюме</button>
-      <a href="https://t.me/alisaap" class="nav-link" target="_blank">Telegram</a>
-      <a href="https://www.behance.net/alisapotki6d21" class="nav-link" target="_blank">Behance</a>
-    </nav>
-  </header>
+<div class="container">
+    <!-- Навигация -->
+    <header class="header">
+        <button>Кейсы</button>
+        <button>Резюме</button>
+        <button>Telegram</button>
+        <button>Behance</button>
+    </header>
 
-  <main class="container">
-    <!-- Блок: Обо мне -->
+    <!-- Главный блок -->
     <section class="hero-section">
-      <div class="hero-text-info">
-        <div class="title-wrapper">
-          <div class="title-decoration hero-decoration"></div>
-          <h1 class="main-title">Привет! Я Алиса Поткина</h1>
+        <div class="hero-text">
+            <div class="highlight-bg">
+                <h1 class="title">Привет! Я Алиса Поткина</h1>
+            </div>
+            <h2 class="subtitle">Графический дизайнер с опытом работы более 3‑х лет</h2>
+            <p class="description">
+                Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS‑материалов и оформления ритейл‑пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.
+            </p>
         </div>
-        <h3 class="subtitle">Графический дизайнер с опытом работы более 3‑х лет</h3>
-        <p class="paragraph">
-          Специализируюсь на создании сильных визуальных коммуникаций для брендов: от айдентики, SMM и многостраничной вёрстки до разработки мерча, POS‑материалов и оформления ритейл‑пространств. Рисую от руки на бумаге и в диджитале, создавая уникальную авторскую графику под конкретные задачи бизнеса.
-        </p>
-      </div>
-      <img class="profile-image" src="avatar.png" alt="Алиса Поткина" />
+        <!-- Заглушка для фото -->
+        <img class="hero-image" src="https://placehold.co/290x335" alt="Алиса Поткина">
     </section>
 
-    <!-- Блок: Мои сферы -->
-    <section class="spheres-section section-padding">
-      <div class="title-wrapper align-left">
-        <div class="title-decoration spheres-decoration"></div>
-        <h2 class="section-title">Мои сферы</h2>
-      </div>
-      
-      <div class="spheres-grid">
-        <div class="sphere-item">
-          <h4 class="sphere-title">Креативный дизайн & Брендинг</h4>
-          <p class="paragraph">Разработка визуальных концепций, гайдлайнов, адаптация Key Visual под разные носители и оформление сложных b2b‑презентаций. Есть опыт работы как в брендинговых агентствах, так и in‑house.</p>
+    <!-- Мои сферы -->
+    <section class="spheres-section">
+        <div class="highlight-bg">
+            <h2 class="title">Мои сферы</h2>
         </div>
-        <div class="sphere-item">
-          <h4 class="sphere-title">Мерч & Полиграфия</h4>
-          <p class="paragraph">Полный цикл создания продукции — от концепции дропа и отрисовки уникальных иллюстраций до создания векторных мокапов и уверенной препресс‑подготовки для типографий.</p>
+        <div class="spheres-grid">
+            <div class="sphere-item">
+                <h3 class="sphere-title">Креативный дизайн & Брендинг</h3>
+                <p class="description">Разработка визуальных концепций, гайдлайнов, адаптация Key Visual под разные носители и оформление сложных b2b‑презентаций. Есть опыт работы как в брендинговых агентствах, так и in‑house.</p>
+            </div>
+            
+            <div class="sphere-item">
+                <h3 class="sphere-title">Мерч & Полиграфия</h3>
+                <p class="description">Полный цикл создания продукции — от концепции дропа и отрисовки уникальных иллюстраций до создания векторных мокапов и уверенной препресс‑подготовки для типографий.</p>
+            </div>
+
+            <div class="sphere-item">
+                <h3 class="sphere-title">AI‑интеграция в коммерцию</h3>
+                <p class="description">Профессионально внедряю генеративные нейросети (Midjourney, Stable Diffusion и др.) в пайплайн производства контента. Создаю сложные промпты для точного рендера (включая ювелирные изделия с полным сохранением дизайна) и генерирую высококачественные рекламные имиджи, ускоряя продакшен.</p>
+            </div>
+
+            <div class="sphere-item">
+                <h3 class="sphere-title">Маркетинговый дизайн</h3>
+                <p class="description">Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital‑контента для таргета, разработка наружной рекламы и быстрый монтаж видеовизиток.</p>
+            </div>
         </div>
-        <div class="sphere-item">
-          <h4 class="sphere-title">AI‑интеграция в коммерцию</h4>
-          <p class="paragraph">Профессионально внедряю генеративные нейросети (Midjourney, Stable Diffusion и др.) в пайплайн производства контента. Создаю сложные промпты для точного рендера и генерирую рекламные имиджи.</p>
-        </div>
-        <div class="sphere-item">
-          <h4 class="sphere-title">Маркетинговый дизайн</h4>
-          <p class="paragraph">Инфографика для маркетплейсов, ориентированная на метрики (с подтверждённым ростом CTR с 2% до 3.5%+), создание digital‑контента для таргета, разработка наружной рекламы и видеовизиток.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Блок: Проекты -->
-    <section class="projects-section section-padding">
-      <div class="title-wrapper align-left">
-        <div class="title-decoration projects-decoration"></div>
-        <h2 class="section-title">Кейсы</h2>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-        <div class="project-card-placeholder"></div>
-      </div>
+    <!-- Проекты -->
+    <section class="projects-section">
+        <div class="highlight-bg">
+            <h2 class="title">проекты</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+        </div>
     </section>
+</div>
 
-    <!-- Кнопка наверх -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
-
-  </main>
-
-  <script>
-    const btn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        btn.classList.add("show");
-      } else {
-        btn.classList.remove("show");
-      }
-    });
-  </script>
 </body>
 </html>
